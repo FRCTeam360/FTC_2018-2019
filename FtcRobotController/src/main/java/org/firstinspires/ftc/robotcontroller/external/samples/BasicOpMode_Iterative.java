@@ -57,8 +57,8 @@ public class BasicOpMode_Iterative extends OpMode {
     private ElapsedTime runtime = new ElapsedTime();
 
     //       Declare motors
-    //private DcMotor <drive name> = null;
-    //private DcMotor <drive name> = null;
+    //private DcMotor <drive name>;
+    //private DcMotor <drive name>;
 
     //Can also declare and map hardware at the same time.
     //private DcMotor <drive name> = hardwareMap.get(DcMotor.class, "<hardware name>");
