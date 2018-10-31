@@ -35,7 +35,6 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-
 /**
  * This file contains an minimal example of a Linear "OpMode". An OpMode is a 'program' that runs in either
  * the autonomous or the teleop period of an FTC match. The names of OpModes appear on the menu
@@ -99,13 +98,19 @@ public class Claw2 extends LinearOpMode {
             rightMotor.setPower(-gamepad1.right_stick_y);
 
             // Use gamepad buttons to move arm up (Y) and down (A)
-            if (gamepad1.y)
-                ClawArm.setPower(ARM_UP_POWER);
+            if (gamepad1.x)
+                ClawArm.setPower(0.45);
             else if (gamepad1.a)
-                ClawArm.setPower(ARM_DOWN_POWER);
+                ClawArm.setPower(-0.45);
             else
                 ClawArm.setPower(0.0);
 
+            if (gamepad1.y)
+                Claw.setPower(0.45);
+            else if (gamepad1.b)
+                Claw.setPower(-0.45);
+            else
+                Claw.setPower(0.0);
 
             }
             // Setup a variable for each drive wheel to save power level for telemetry
