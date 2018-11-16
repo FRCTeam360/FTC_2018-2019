@@ -43,7 +43,8 @@ public class Autonomous1 extends LinearOpMode {
 
     DcMotor LeftMotor;
     DcMotor RightMotor;
-
+    DcMotor ArmMotor;
+    DcMotor ClawMotor;
 
     @Override
     public void runOpMode() throws InterruptedException
@@ -51,19 +52,38 @@ public class Autonomous1 extends LinearOpMode {
 
         LeftMotor = hardwareMap.dcMotor.get("LeftMotor");
         RightMotor = hardwareMap.dcMotor.get("RightMotor");
+        ArmMotor = hardwareMap.dcMotor.get("ArmMotor");
+        ClawMotor = hardwareMap.dcMotor.get("ClawMotor");
         LeftMotor.setDirection(DcMotor.Direction.REVERSE);
-
 
         waitForStart();
 
+        ArmMotor.setPower(1);
 
-        LeftMotor.setPower(0.6);
-        RightMotor.setPower(0.6);
+        sleep(3000);
 
-        sleep(3500);
+        ClawMotor.setPower(1);
+
+        sleep(3000);
+
+        ArmMotor.setPower(-1);
+
+        sleep(3000);
+
+
+        ClawMotor.setPower(-1);
+
+        sleep(3000);
+
+        LeftMotor.setPower(2);
+        RightMotor.setPower(2);
+
+        sleep(3000);
 
         LeftMotor.setPower(0);
         RightMotor.setPower(0);
+
+
 
 
 
