@@ -54,6 +54,7 @@ import com.qualcomm.robotcore.util.Range;
 @Disabled
 public class BasicOpMode_Iterative extends OpMode {
 
+    // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
 
     //       Declare motors
@@ -78,6 +79,8 @@ public class BasicOpMode_Iterative extends OpMode {
 
         //<drive name>  = hardwareMap.get(DcMotor.class, "<hardware name>");
         //<drive name> = hardwareMap.get(DcMotor.class, "<hardware name>");
+
+
 
         // Most robots need the motor on one side to be reversed to drive forward (usually the right motor)
         // Reverse the motor that runs backwards when connected directly to the battery
@@ -136,15 +139,14 @@ public class BasicOpMode_Iterative extends OpMode {
         // <name> (see lines 144/145) = -gamepad1.right_stick_y ;
 
         // Send calculated power to wheels
-
         //<drive name>.setPower(<name> (see lines 144/145));
         //<drive name>.setPower(<name> (see lines 144/145));
 
         // Show the elapsed game time
-        telemetry.addData("Status", "Run Time: " + runtime.toString());
-
+        //telemetry.addData("Status", "Run Time: " + runtime.toString());
         //(not needed) shows the power of each wheel
         //telemetry.addData("Motors", "left (%.2f), right (%.2f)", <name> (see lines 144/145), <name> (see lines 144/145));
+
     }
 
     /*
