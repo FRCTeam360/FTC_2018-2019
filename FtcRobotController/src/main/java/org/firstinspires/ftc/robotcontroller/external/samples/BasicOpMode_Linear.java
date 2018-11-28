@@ -111,10 +111,10 @@ public class BasicOpMode_Linear extends LinearOpMode {
 
             // Tank Mode uses one stick to control each wheel.
             // - This requires no math, but it is hard to drive forward slowly and keep straight.
-                    //These two lines are for a tank drive
+            //These two lines are for a tank drive
 
-                    // <power name>  = -gamepad1.left_stick_y ;
-                    // <power name> = -gamepad1.right_stick_y ;
+            // <power name>  = -gamepad1.left_stick_y ;
+            // <power name> = -gamepad1.right_stick_y ;
 
             // Send calculated power to wheels
             //<drive name>.setPower(<power name>);
