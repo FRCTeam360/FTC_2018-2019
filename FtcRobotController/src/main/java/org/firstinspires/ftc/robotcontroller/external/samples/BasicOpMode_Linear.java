@@ -64,6 +64,7 @@ public class BasicOpMode_Linear extends LinearOpMode {
     //private DcMotor <drive name> = hardwareMap.get(DcMotor.class, "<hardware name>");
     //private DcMotor <drive name> = hardwareMap.get(DcMotor.class, "<hardware name>");
 
+
     @Override
     public void runOpMode() {
         telemetry.addData("Status", "Initialized");
@@ -76,6 +77,7 @@ public class BasicOpMode_Linear extends LinearOpMode {
 
         //<drive name>  = hardwareMap.get(DcMotor.class, "<hardware name>");
         //<drive name> = hardwareMap.get(DcMotor.class, "<hardware name>");  "hardware name" will be the name of the motor when configuring hardware on phone
+
 
         // Most robots need the motor on one side to be reversed to drive forward (usually the right motor)
         // Reverse the motor that runs backwards when connected directly to the battery
@@ -109,24 +111,22 @@ public class BasicOpMode_Linear extends LinearOpMode {
 
             // Tank Mode uses one stick to control each wheel.
             // - This requires no math, but it is hard to drive forward slowly and keep straight.
-
             //These two lines are for a tank drive
 
             // <power name>  = -gamepad1.left_stick_y ;
             // <power name> = -gamepad1.right_stick_y ;
 
             // Send calculated power to wheels
-
             //<drive name>.setPower(<power name>);
             //<drive name>.setPower(<power name>);
 
             // Show the elapsed game time.
-            telemetry.addData("Status", "Run Time: " + runtime.toString());
+            //telemetry.addData("Status", "Run Time: " + runtime.toString());
 
             //(optional) Shows the power of each motor
             //telemetry.addData("Motors", "left (%.2f), right (%.2f)", <power name>, <power name>);
 
-            telemetry.update();
+            //telemetry.update();
         }
     }
 }
