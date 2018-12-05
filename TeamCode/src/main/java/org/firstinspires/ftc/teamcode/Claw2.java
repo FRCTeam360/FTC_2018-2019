@@ -60,7 +60,7 @@ public class Claw2 extends LinearOpMode {
     DcMotor leftMotor;
     DcMotor rightMotor;
     DcMotor Claw;
-    DcMotor ClawArm;
+    //DcMotor ClawArm;
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -70,12 +70,12 @@ public class Claw2 extends LinearOpMode {
         leftMotor = hardwareMap.dcMotor.get("Left_Motor");
         rightMotor = hardwareMap.dcMotor.get("Right_Motor");
         Claw = hardwareMap.dcMotor.get("Claw");
-        ClawArm = hardwareMap.dcMotor.get("ClawArm");
+        //ClawArm = hardwareMap.dcMotor.get("ClawArm");
 
         leftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
         rightMotor.setDirection(DcMotorSimple.Direction.FORWARD);
         Claw.setDirection(DcMotorSimple.Direction.FORWARD);
-        ClawArm.setDirection(DcMotorSimple.Direction.FORWARD);
+        //ClawArm.setDirection(DcMotorSimple.Direction.FORWARD);
         // Initialize the hardware variables. Note that the strings used here as parameters
         // to 'get' must correspond to the names assigned during the robot configuration
         // step (using the FTC Robot Controller app on the phone).
@@ -91,27 +91,27 @@ public class Claw2 extends LinearOpMode {
 
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
-            telemetry.addData("Status" , "Run Time: " + runtime.toString());
+            telemetry.addData("Status", "Run Time: " + runtime.toString());
             telemetry.update();
 
             leftMotor.setPower(-gamepad1.left_stick_y);
             rightMotor.setPower(-gamepad1.right_stick_y);
 
             // Use gamepad buttons to move arm up (Y) and down (A)
-            if (gamepad1.x)
-                ClawArm.setPower(0.45);
-            else if (gamepad1.a)
-                ClawArm.setPower(-0.45);
-            else
-                ClawArm.setPower(0.0);
+//            if (gamepad1.x){
+//                ClawArm.setPower(0.45)
+//            } else if (gamepad1.a){
+//                ClawArm.setPower(-0.45);
+//            } else {
+//                ClawArm.setPower(0.0);
+//            }
 
-            if (gamepad1.y)
+            if (gamepad1.y) {
                 Claw.setPower(0.45);
-            else if (gamepad1.b)
+            } else if (gamepad1.b) {
                 Claw.setPower(-0.45);
-            else
+            } else {
                 Claw.setPower(0.0);
-
             }
             // Setup a variable for each drive wheel to save power level for telemetry
 
@@ -133,4 +133,5 @@ public class Claw2 extends LinearOpMode {
             // Show the elapsed game time and wheel power.
         }
     }
+}
 

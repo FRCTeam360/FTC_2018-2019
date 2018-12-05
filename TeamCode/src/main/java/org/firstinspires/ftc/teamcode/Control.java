@@ -55,14 +55,12 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 public class Control extends LinearOpMode {
 
     // Declare OpMode members.
-    private ElapsedTime runtime = new ElapsedTime();
-    //private DcMotor leftDrive = null;
-    //private DcMotor rightDrive = null;
+    private ElapsedTime runtime = new ElapsedTime(8);
 
     DcMotor leftMotor;
     DcMotor rightMotor;
-    Servo Claw;
-    DcMotor ClawArm;
+    //Servo Claw;
+    //DcMotor ClawArm;
 
     double servoPosition = 1;
 
@@ -73,13 +71,15 @@ public class Control extends LinearOpMode {
 
         leftMotor = hardwareMap.dcMotor.get("Left_Motor");
         rightMotor = hardwareMap.dcMotor.get("Right_Motor");
-        Claw = hardwareMap.servo.get("Claw");
-        ClawArm = hardwareMap.dcMotor.get("ClawArm");
+        //Claw = hardwareMap.servo.get("Claw");
+        //ClawArm = hardwareMap.dcMotor.get("ClawArm");
 
         leftMotor.setPower(-gamepad1.left_stick_y);
         rightMotor.setPower(-gamepad1.right_stick_y);
-        ClawArm.setDirection(DcMotorSimple.Direction.FORWARD);
-        Claw.setPosition(servoPosition);
+        rightMotor.setDirection(DcMotor.Direction.REVERSE);
+
+        //ClawArm.setDirection(DcMotorSimple.Direction.FORWARD);
+        //Claw.setPosition(servoPosition);
 
         waitForStart();
         runtime.reset();
@@ -95,17 +95,19 @@ public class Control extends LinearOpMode {
 
 
             if (gamepad1.y) {
-                ClawArm.setPower(0.75);
-            } else if (gamepad1.a)
-                ClawArm.setPower(-0.25);
-            else
-                ClawArm.setPower(0.0);
-
-            if (gamepad1.x) {
-                Claw.setPosition(0);
-            } else if (gamepad1.b) {
-                Claw.setPosition(1);
+                //ClawArm.setPower(0.75);
+            } else if (gamepad1.a) {
+                //ClawArm.setPower(-0.25);
+            } else {
+                //ClawArm.setPower(0.0);
             }
+
+//            if (gamepad1.x) {
+//                Claw.setPosition(0);
+//            } else if (gamepad1.b) {
+//                Claw.setPosition(1);
+//            }
         }
     }
 }
+  

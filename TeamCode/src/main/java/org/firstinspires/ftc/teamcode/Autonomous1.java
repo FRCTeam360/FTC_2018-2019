@@ -31,61 +31,53 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import com.qualcomm.robotcore.hardware.Servo;
 
-@Autonomous
-        (name="Autonomous", group="Autonomous")
+@Autonomous(name="Autonomous1", group="Autonomous")
 
 public class Autonomous1 extends LinearOpMode {
 
-    DcMotor LeftMotor;
-    DcMotor RightMotor;
-    DcMotor ArmMotor;
-    DcMotor ClawMotor;
+    DcMotor leftMotor;
+    DcMotor rightMotor;
+    //DcMotor ArmMotor;
+    //DcMotor ClawMotor;
 
     @Override
     public void runOpMode() throws InterruptedException
     {
 
-        LeftMotor = hardwareMap.dcMotor.get("LeftMotor");
-        RightMotor = hardwareMap.dcMotor.get("RightMotor");
-        ArmMotor = hardwareMap.dcMotor.get("ArmMotor");
-        ClawMotor = hardwareMap.dcMotor.get("ClawMotor");
-        LeftMotor.setDirection(DcMotor.Direction.REVERSE);
+        leftMotor = hardwareMap.dcMotor.get("Left_Motor");
+        rightMotor = hardwareMap.dcMotor.get("Right_Motor");
+        //ArmMotor = hardwareMap.dcMotor.get("ArmMotor");
+        //ClawMotor = hardwareMap.dcMotor.get("ClawMotor");
+        rightMotor.setDirection(DcMotor.Direction.REVERSE);
 
         waitForStart();
 
-        ArmMotor.setPower(1);
+        //ArmMotor.setPower(1);
 
-        sleep(3000);
+        //sleep(3000);
 
-        ClawMotor.setPower(1);
+        //ClawMotor.setPower(1);
 
-        sleep(3000);
+        //sleep(3000);
 
-        ArmMotor.setPower(-1);
+        //ArmMotor.setPower(-1);
 
-        sleep(3000);
-
-
-        ClawMotor.setPower(-1);
-
-        sleep(3000);
-
-        LeftMotor.setPower(2);
-        RightMotor.setPower(2);
-
-        sleep(3000);
-
-        LeftMotor.setPower(0);
-        RightMotor.setPower(0);
+        //sleep(3000);
 
 
+        //ClawMotor.setPower(-1);
 
+        //sleep(3000);
 
+        leftMotor.setPower(1);
+        rightMotor.setPower(-1);
+
+        sleep(1700);
+
+        leftMotor.setPower(0);
+        rightMotor.setPower(0);
 
     }
 }
